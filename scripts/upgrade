@@ -196,14 +196,6 @@ ynh_add_systemd_config
 #=================================================
 # GENERIC FINALIZATION
 #=================================================
-# SETUP LOGROTATE
-#=================================================
-ynh_script_progression --message="Upgrading logrotate configuration..." --time --weight=1
-
-# Use logrotate to manage app-specific logfile(s)
-ynh_use_logrotate --non-append
-
-#=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --time --weight=1
