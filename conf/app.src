@@ -1,7 +1,7 @@
-SOURCE_URL=url of app's source
-SOURCE_SUM=sha256 checksum
+SOURCE_URL=https://github.com/opensupports/opensupports/releases/download/v4.10.0/opensupports_v4.10.0.zip
+SOURCE_SUM=d3b2ec0d64deae49f789768f47c05f53ee23bdcf051589457ec502d926c958ed
 SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=tar.gz
-SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=
+SOURCE_FORMAT=zip
+SOURCE_IN_SUBDIR=false
+SOURCE_FILENAME=opensupports_v4.10.0.zip
 SOURCE_EXTRACT=true
