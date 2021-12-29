@@ -52,13 +52,6 @@ ynh_abort_if_errors
 #=================================================
 # STANDARD UPGRADE STEPS
 #=================================================
-# STOP SYSTEMD SERVICE
-#=================================================
-ynh_script_progression --message="Stopping a systemd service..." --time --weight=1
-
-ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app/$app.log"
-
-#=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --time --weight=1
@@ -184,7 +177,6 @@ chown $app:$app "$final_path/some_config_file"
 ###
 ### ynh_replace_string --match_string="match_string" --replace_string="replace_string" --target_file="$final_path/some_config_file"
 ### ynh_store_file_checksum --file="$final_path/some_config_file"
-
 #=================================================
 # SETUP SYSTEMD
 #=================================================
@@ -195,13 +187,6 @@ ynh_add_systemd_config
 
 #=================================================
 # GENERIC FINALIZATION
-#=================================================
-# START SYSTEMD SERVICE
-#=================================================
-ynh_script_progression --message="Starting a systemd service..." --time --weight=1
-
-ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
-
 #=================================================
 # UPGRADE FAIL2BAN
 #=================================================
